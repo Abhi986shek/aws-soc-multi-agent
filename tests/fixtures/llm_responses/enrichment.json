@@ -1,0 +1,15 @@
+{
+  "attack_hypothesis": "Insider Data Exfiltration with Anti-Forensics",
+  "ti_confidence": 0.89,
+  "mitre_mappings": ["T1537", "T1562.008", "T1070.008", "T1098", "T1078"],
+  "threat_patterns": [
+    "insider_exfiltration_sequence",
+    "anti_forensics_sequence"
+  ],
+  "anomalies_detected": [
+    "large_s3_download detected in GetObject",
+    "log_tampering_attempt detected in StopLogging",
+    "new_s3_policy_edits detected in PutBucketPolicy",
+    "off_hours_access detected across batch"
+  ]
+}

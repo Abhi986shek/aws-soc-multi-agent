@@ -1,0 +1,22 @@
+{
+  "threat_score": 0.93,
+  "priority_level": "Critical",
+  "recommended_actions": [
+    "disable_user_account",
+    "rotate_access_keys",
+    "enable_cloudtrail",
+    "block_source_ip",
+    "quarantine_principal",
+    "enable_s3_versioning",
+    "detach_policy"
+  ],
+  "risk_factors": {
+    "threat_intelligence": {"score": 0.89, "weight": 0.30},
+    "mitre_severity": {"level": "Critical", "weight": 0.25},
+    "data_sensitivity": {"classification": "PII", "weight": 0.25},
+    "user_authorization": {"role": "standard_user", "weight": 0.10},
+    "event_volume": {"count": 5, "weight": 0.10}
+  },
+  "data_sensitivity": "PII",
+  "requires_approval": true
+}

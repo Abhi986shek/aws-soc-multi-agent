@@ -1,0 +1,14 @@
+{
+  "update_timestamp": "2025-07-23T02:47:15Z",
+  "incident_id": "FR-MOCK-20250723-024700",
+  "updates_applied": [
+    {"update_type": "attack_pattern_learning", "new_patterns_learned": 1, "status": "success"},
+    {"update_type": "ioc_database_update", "total_iocs_added": 5, "status": "success"},
+    {"update_type": "detection_threshold_optimization", "thresholds_adjusted": 2, "status": "success"}
+  ],
+  "learning_confidence": 0.92,
+  "improvement_recommendations": [
+    "Deploy updated attack pattern detection to production within 24 hours",
+    "Schedule quarterly review of learned patterns"
+  ]
+}

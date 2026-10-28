@@ -1,0 +1,66 @@
+<dashboard version="1.1" theme="dark">
+  <label>SOC Agent - Incidents</label>
+  <description>Default SOC Agent dashboard. All panels query sourcetype=soc_agent:incident.</description>
+
+  <row>
+    <panel>
+      <title>Incidents per hour (last 24h)</title>
+      <chart>
+        <search>
+          <query>sourcetype=soc_agent:incident earliest=-24h | timechart span=1h count</query>
+        </search>
+        <option name="charting.chart">line</option>
+      </chart>
+    </panel>
+
+    <panel>
+      <title>Severity distribution (last 24h)</title>
+      <chart>
+        <search>
+          <query>sourcetype=soc_agent:incident earliest=-24h | stats count by priority_level</query>
+        </search>
+        <option name="charting.chart">pie</option>
+      </chart>
+    </panel>
+  </row>
+
+  <row>
+    <panel>
+      <title>Top principals by incident count (last 7d)</title>
+      <chart>
+        <search>
+          <query>sourcetype=soc_agent:incident earliest=-7d
+| stats count by affected_user
+| sort - count | head 10</query>
+        </search>
+        <option name="charting.chart">bar</option>
+      </chart>
+    </panel>
+
+    <panel>
+      <title>MITRE technique frequency (last 7d)</title>
+      <table>
+        <search>
+          <query>sourcetype=soc_agent:incident earliest=-7d
+| spath output=technique path=mitre_techniques{}.technique_id
+| mvexpand technique
+| stats count by technique
+| sort - count</query>
+        </search>
+      </table>
+    </panel>
+  </row>
+
+  <row>
+    <panel>
+      <title>Recent incidents (last 24h)</title>
+      <table>
+        <search>
+          <query>sourcetype=soc_agent:incident earliest=-24h
+| table _time, ticket_id, ticket_type, priority_level, affected_user, escalated
+| sort - _time</query>
+        </search>
+      </table>
+    </panel>
+  </row>
+</dashboard>

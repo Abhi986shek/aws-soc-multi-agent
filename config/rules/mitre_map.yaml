@@ -1,0 +1,12 @@
+# CloudTrail event → MITRE ATT&CK technique mapping.
+mappings:
+  ConsoleLogin:
+    - T1078   # Valid Accounts
+  CreateAccessKey:
+    - T1098   # Account Manipulation
+  AttachUserPolicy:
+    - T1098.003
+  StopLogging:
+    - T1562.008  # Impair Defenses: Disable Cloud Logs
+  GetSecretValue:
+    - T1552.001  # Unsecured Credentials

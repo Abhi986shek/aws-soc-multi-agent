@@ -1,0 +1,124 @@
+[
+  {
+    "event_id": "evt-0001-getobject",
+    "event_name": "GetObject",
+    "eventName": "GetObject",
+    "event_time": "2025-07-23T02:41:12Z",
+    "event_source": "s3.amazonaws.com",
+    "aws_region": "us-east-1",
+    "source_ip": "203.0.113.45",
+    "user_agent": "aws-cli/2.15.10 Python/3.11 Linux/6.5",
+    "user_identity": {
+      "type": "IAMUser",
+      "arn": "arn:aws:iam::123456789012:user/jsmith"
+    },
+    "resources": ["arn:aws:s3:::acme-customer-pii-prod/exports/customers.csv"],
+    "request_parameters": {
+      "bucketName": "acme-customer-pii-prod",
+      "key": "exports/customers.csv"
+    },
+    "response_elements": null,
+    "username": "jsmith"
+  },
+  {
+    "event_id": "evt-0002-stoplogging",
+    "event_name": "StopLogging",
+    "eventName": "StopLogging",
+    "event_time": "2025-07-23T02:42:03Z",
+    "event_source": "cloudtrail.amazonaws.com",
+    "aws_region": "us-east-1",
+    "source_ip": "203.0.113.45",
+    "user_agent": "aws-cli/2.15.10 Python/3.11 Linux/6.5",
+    "user_identity": {
+      "type": "IAMUser",
+      "arn": "arn:aws:iam::123456789012:user/jsmith"
+    },
+    "resources": [{"ARN": "arn:aws:cloudtrail:us-east-1:123456789012:trail/org-trail"}],
+    "request_parameters": {"name": "org-trail"},
+    "response_elements": null,
+    "username": "jsmith"
+  },
+  {
+    "event_id": "evt-0003-putbucketpolicy",
+    "event_name": "PutBucketPolicy",
+    "eventName": "PutBucketPolicy",
+    "event_time": "2025-07-23T02:43:41Z",
+    "event_source": "s3.amazonaws.com",
+    "aws_region": "us-east-1",
+    "source_ip": "203.0.113.45",
+    "user_agent": "aws-cli/2.15.10 Python/3.11 Linux/6.5",
+    "user_identity": {
+      "type": "IAMUser",
+      "arn": "arn:aws:iam::123456789012:user/jsmith"
+    },
+    "resources": ["arn:aws:s3:::acme-customer-pii-prod"],
+    "request_parameters": {
+      "bucketName": "acme-customer-pii-prod",
+      "bucketPolicy": {
+        "Version": "2012-10-17",
+        "Statement": [{"Effect": "Allow", "Principal": "*", "Action": "s3:GetObject", "Resource": "arn:aws:s3:::acme-customer-pii-prod/*"}]
+      }
+    },
+    "response_elements": null,
+    "username": "jsmith"
+  },
+  {
+    "event_id": "evt-0004-createaccesskey",
+    "event_name": "CreateAccessKey",
+    "eventName": "CreateAccessKey",
+    "event_time": "2025-07-23T02:44:17Z",
+    "event_source": "iam.amazonaws.com",
+    "aws_region": "us-east-1",
+    "source_ip": "203.0.113.45",
+    "user_agent": "aws-cli/2.15.10 Python/3.11 Linux/6.5",
+    "user_identity": {
+      "type": "IAMUser",
+      "arn": "arn:aws:iam::123456789012:user/jsmith"
+    },
+    "resources": [{"ARN": "arn:aws:iam::123456789012:user/jsmith"}],
+    "request_parameters": {"userName": "jsmith"},
+    "response_elements": {
+      "accessKey": {"accessKeyId": "AKIAEXAMPLE1234567", "status": "Active"}
+    },
+    "username": "jsmith"
+  },
+  {
+    "event_id": "evt-0005-describeinstances",
+    "event_name": "DescribeInstances",
+    "eventName": "DescribeInstances",
+    "event_time": "2025-07-23T02:45:02Z",
+    "event_source": "ec2.amazonaws.com",
+    "aws_region": "us-east-1",
+    "source_ip": "10.0.1.20",
+    "user_agent": "aws-sdk-java/1.12.500",
+    "user_identity": {
+      "type": "AssumedRole",
+      "arn": "arn:aws:sts::123456789012:assumed-role/AutoScalerRole/i-0abcd"
+    },
+    "resources": [],
+    "request_parameters": {"maxResults": 50},
+    "response_elements": null,
+    "username": "AutoScalerRole"
+  },
+  {
+    "event_id": "evt-0006-getobject-burst",
+    "event_name": "GetObject",
+    "eventName": "GetObject",
+    "event_time": "2025-07-23T02:46:38Z",
+    "event_source": "s3.amazonaws.com",
+    "aws_region": "us-east-1",
+    "source_ip": "203.0.113.45",
+    "user_agent": "aws-cli/2.15.10 Python/3.11 Linux/6.5",
+    "user_identity": {
+      "type": "IAMUser",
+      "arn": "arn:aws:iam::123456789012:user/jsmith"
+    },
+    "resources": ["arn:aws:s3:::acme-customer-pii-prod/exports/orders.csv"],
+    "request_parameters": {
+      "bucketName": "acme-customer-pii-prod",
+      "key": "exports/orders.csv"
+    },
+    "response_elements": null,
+    "username": "jsmith"
+  }
+]

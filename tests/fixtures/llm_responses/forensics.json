@@ -1,0 +1,27 @@
+{
+  "report_id": "FR-MOCK-20250723-024700",
+  "incident_type": "Insider Data Exfiltration with Anti-Forensics",
+  "severity": "Critical",
+  "timeline": [
+    {"timestamp": "2025-07-23T02:41:12Z", "event": "GetObject on PII bucket"},
+    {"timestamp": "2025-07-23T02:42:03Z", "event": "StopLogging on org trail"},
+    {"timestamp": "2025-07-23T02:43:41Z", "event": "PutBucketPolicy world-readable"},
+    {"timestamp": "2025-07-23T02:44:17Z", "event": "CreateAccessKey"},
+    {"timestamp": "2025-07-23T02:46:38Z", "event": "GetObject second file"}
+  ],
+  "evidence": {
+    "cloudtrail_logs": 5,
+    "s3_access_logs": 2,
+    "iam_changes": 2
+  },
+  "iocs": {
+    "ip_addresses": ["203.0.113.45"],
+    "user_accounts": ["jsmith"],
+    "resources_accessed": ["arn:aws:s3:::acme-customer-pii-prod"]
+  },
+  "recommendations": [
+    "Preserve logs for 90 days",
+    "Interview affected user",
+    "Block 203.0.113.45 at perimeter"
+  ]
+}

@@ -1,0 +1,10 @@
+# Known-good principals / IPs / user-agents.
+# Stage 0 filter drops matching events before any LLM call.
+principals:
+  - arn:aws:iam::*:role/CIDeployRole
+  - arn:aws:iam::*:role/BackupRole
+
+source_ips: []
+
+user_agents:
+  - aws-internal/*

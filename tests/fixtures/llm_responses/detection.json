@@ -1,0 +1,42 @@
+[
+  {
+    "event_id": "evt-0001-getobject",
+    "event_name": "GetObject",
+    "threat_score": 0.82,
+    "matched_threats": ["credential_exfiltration", "data_exfiltration"],
+    "threat_categories": ["large_s3_download"],
+    "reasoning": "S3 GetObject of PII bucket from off-hours by human IAM user."
+  },
+  {
+    "event_id": "evt-0002-stoplogging",
+    "event_name": "StopLogging",
+    "threat_score": 0.94,
+    "matched_threats": ["defense_evasion"],
+    "threat_categories": ["log_tampering"],
+    "reasoning": "StopLogging on org trail is a classic defense-evasion action."
+  },
+  {
+    "event_id": "evt-0003-putbucketpolicy",
+    "event_name": "PutBucketPolicy",
+    "threat_score": 0.88,
+    "matched_threats": ["iam_privilege_escalation"],
+    "threat_categories": ["policy_change"],
+    "reasoning": "Bucket policy made world-readable on a PII bucket."
+  },
+  {
+    "event_id": "evt-0004-createaccesskey",
+    "event_name": "CreateAccessKey",
+    "threat_score": 0.71,
+    "matched_threats": ["credential_exfiltration", "iam_privilege_escalation"],
+    "threat_categories": ["credential_access"],
+    "reasoning": "New access key on same principal that just disabled logging."
+  },
+  {
+    "event_id": "evt-0006-getobject-burst",
+    "event_name": "GetObject",
+    "threat_score": 0.79,
+    "matched_threats": ["data_exfiltration"],
+    "threat_categories": ["large_s3_download"],
+    "reasoning": "Second S3 GetObject in the same burst on the same PII bucket."
+  }
+]

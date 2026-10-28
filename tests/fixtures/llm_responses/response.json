@@ -1,0 +1,29 @@
+{
+  "mitigation_actions_taken": [
+    "disable_user_account",
+    "rotate_access_keys",
+    "enable_cloudtrail",
+    "block_source_ip",
+    "quarantine_principal",
+    "enable_s3_versioning",
+    "detach_policy"
+  ],
+  "tickets_created": [
+    "SOC-RESOLVED-20250723024600",
+    "SOC-PRIORITY-20250723024600"
+  ],
+  "incident_timeline": [
+    {"timestamp": "2025-07-23T02:41:12Z", "event": "large_s3_download"},
+    {"timestamp": "2025-07-23T02:42:03Z", "event": "log_tampering"},
+    {"timestamp": "2025-07-23T02:43:41Z", "event": "policy_change"},
+    {"timestamp": "2025-07-23T02:44:17Z", "event": "credential_access"},
+    {"timestamp": "2025-07-23T02:46:38Z", "event": "large_s3_download"}
+  ],
+  "learning_updates": {
+    "learning_confidence": 0.92,
+    "new_patterns_learned": 1,
+    "iocs_added": 5,
+    "thresholds_optimized": 2,
+    "baselines_updated": 3
+  }
+}

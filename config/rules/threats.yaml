@@ -1,0 +1,27 @@
+# Threat patterns (was threats.txt).
+# Each entry: name, description, cloudtrail_events, severity_hint.
+threats:
+  - name: iam_privilege_escalation
+    description: Attempt to grant elevated IAM permissions
+    cloudtrail_events:
+      - AttachUserPolicy
+      - AttachRolePolicy
+      - PutUserPolicy
+      - CreateAccessKey
+    severity_hint: high
+
+  - name: credential_exfiltration
+    description: Access-key or secret material being read/created
+    cloudtrail_events:
+      - CreateAccessKey
+      - GetSecretValue
+      - GetParameter
+    severity_hint: high
+
+  - name: defense_evasion
+    description: Disabling logging or security controls
+    cloudtrail_events:
+      - StopLogging
+      - DeleteTrail
+      - DisableKey
+    severity_hint: critical
