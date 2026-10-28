@@ -434,6 +434,3 @@ tolerance.
   directly. They are plain markdown, loaded at agent init — no code
   change needed.
 
-## License / Author
-
-MIT (placeholder). Author: *(placeholder)*.
